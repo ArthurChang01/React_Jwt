@@ -6,9 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "json-server --watch db.json",
-    "build": "webpack-dev-server --progress --hot --colors --content-base .",
-    "package": "webpack -p --config webpack.config.js",
-    "start": "node ./node_modules/concurrently/src/main.js --kill-others \"set NODE_ENV=development\" \"npm run server\" \"npm run build\""
+    "build": "webpack-dev-server --devtool eval --progress --colors --hot --content-base .",
+    "start": "node ./node_modules/concurrently/src/main.js --kill-others \"npm run server\" \"npm run build\"",
+    "deploy": "webpack -p --config webpack.config.js"
   },
   "author": "",
   "license": "ISC",
@@ -45,9 +45,10 @@
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.8.5",
     "gulp": "^3.9.1",
-    "gulp-exec": "^2.1.2",
     "gulp-run": "^1.6.12",
     "gulp-util": "^3.0.7",
+    "json-server": "^0.8.14",
+    "react-css-modules": "^3.7.6",
     "react-transform-hmr": "^1.0.4",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",

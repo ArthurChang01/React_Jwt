@@ -1,7 +1,7 @@
 var gulp = require("gulp");
 var webpack = require('webpack');
 var utility = require('gulp-util');
-var run = require('gulp-run');
+var runner = require('gulp-run');
 var webpackConfig = require('./webpack.config.js');
 
 var path = {
@@ -53,7 +53,7 @@ gulp.task('moveFontsFiles',function(){
 gulp.task("compile:js", function (callback) {
     var myConfig = Object.create(webpackConfig);
 
-    run('set NODE_ENV=production').exec(); 
+    runner('set NODE_ENV=production').exec();
 
     webpack(myConfig, function (err, stats) {
         if (err) throw new utility.PluginError("webpack:build", err);
